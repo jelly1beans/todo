@@ -10,80 +10,83 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <style>
+            *{margin:0;padding:0;box-sizing:border-box;}
             body{
-                background: rgb(141, 68, 141);
-                margin: 0;
-                padding: 40px 20px;
+                background: rgb(103, 26, 103);
                 min-height: 100vh;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: Arial, sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container{
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                width: 90%;
+                max-width: 450px;
             }
             h1{
-                color: white;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                color: #fff;
+                text-align: center;
                 margin-bottom: 30px;
+                font-size: 28px;
             }
-            input {
-                padding: 12px 16px;
-                border: none;
-                border-radius: 25px;
-                width: 300px;
+            .input-box{
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            input{
+                flex: 1;
+                padding: 15px;
+                border: 2px solid rgba(255,255,255,0.2);
+                border-radius: 10px;
+                background: rgba(255,255,255,0.1);
+                color: #fff;
                 font-size: 16px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             }
-            input:focus{
-                outline: none;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            }
+            input::placeholder{color: rgba(255,255,255,0.6);}
+            input:focus{outline: none;border-color: #9d00ff;}
             button{
-                padding: 12px 24px;
-                margin-top: 20px;
-                margin-left: 10px;
+                padding: 15px 25px;
                 border: none;
-                border-radius: 25px;
-                background-color: #4CAF50;
-                color: white;
+                border-radius: 10px;
+                background: rgb(42, 11, 42);
+                color: #fff;
                 font-size: 16px;
                 cursor: pointer;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                transition: all 0.3s;
+                transition: 0.3s;
             }
-            button:hover{
-                background-color: #45a049;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            }
-            ul{
-                list-style: none;
-                padding: 0;
-                margin-top: 30px;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+            button:hover{transform: scale(1.05);}
+            ul{list-style: none;}
             li{
-                background: white;
-                padding: 15px 20px;
+                background: rgba(255,255,255,0.15);
+                padding: 15px;
                 margin: 10px 0;
                 border-radius: 10px;
+                color: #fff;
                 cursor: pointer;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                transition: all 0.3s;
+                transition: 0.3s;
+                border-left: 4px solid #a600ff;
             }
             li:hover{
-                background-color: #ffebee;
-                transform: translateX(5px);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                background: rgba(173, 50, 255, 0.3);
+                transform: translateX(-5px);
             }
         </style>
     </head>
     <body>
-        <center>
-        <h1 class="text-center">To-Do List App</h1>
-        <br>
-        <input type="text" id="taskInput" placeholder="Add a Task">
-        <button onclick="addTask()">Add Task</button>
-        <ul id="taskList"></ul>
-        </center>
+        <div class="container">
+            <h1>My To-Do List</h1>
+            <div class="input-box">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
         <script>
             const taskList = document.getElementById('taskList');
             function addTask(){
