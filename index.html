@@ -10,71 +10,79 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <style>
-            *{margin:0;padding:0;box-sizing:border-box;}
             body{
-                background: rgb(103, 26, 103);
+                background: rgb(141, 68, 141);
+                margin: 0;
+                padding: 40px 20px;
                 min-height: 100vh;
-                font-family: Arial, sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .container{
-                background: rgba(255,255,255,0.1);
-                backdrop-filter: blur(10px);
-                padding: 40px;
-                border-radius: 20px;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-                width: 90%;
-                max-width: 450px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
             h1{
-                color: #fff;
-                text-align: center;
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
                 margin-bottom: 30px;
-                font-size: 28px;
+                font-size: 36px;
+                letter-spacing: 2px;
             }
-            .input-box{
-                display: flex;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-            input{
-                flex: 1;
-                padding: 15px;
-                border: 2px solid rgba(255,255,255,0.2);
+            input {
+                padding: 15px 20px;
+                border: 3px solid rgba(255,255,255,0.3);
                 border-radius: 10px;
-                background: rgba(255,255,255,0.1);
-                color: #fff;
+                width: 350px;
                 font-size: 16px;
+                background: rgba(255,255,255,0.9);
+                transition: 0.3s;
             }
-            input::placeholder{color: rgba(255,255,255,0.6);}
-            input:focus{outline: none;border-color: #9d00ff;}
+            input:focus{
+                outline: none;
+                border-color: #fff;
+                background: #fff;
+                transform: scale(1.02);
+            }
             button{
-                padding: 15px 25px;
+                padding: 15px 30px;
+                margin-top: 20px;
+                margin-left: 10px;
                 border: none;
                 border-radius: 10px;
-                background: rgb(42, 11, 42);
-                color: #fff;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                color: white;
                 font-size: 16px;
+                font-weight: bold;
                 cursor: pointer;
-                transition: 0.3s;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                transition: all 0.3s;
             }
-            button:hover{transform: scale(1.05);}
-            ul{list-style: none;}
+            button:hover{
+                background: linear-gradient(135deg, #764ba2, #667eea);
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin-top: 30px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
             li{
-                background: rgba(255,255,255,0.15);
-                padding: 15px;
-                margin: 10px 0;
-                border-radius: 10px;
-                color: #fff;
+                background: linear-gradient(135deg, #fff, #f8f9fa);
+                padding: 18px 25px;
+                margin: 12px 0;
+                border-radius: 15px;
                 cursor: pointer;
-                transition: 0.3s;
-                border-left: 4px solid #a600ff;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                transition: all 0.3s;
+                border-left: 5px solid #667eea;
+                font-size: 16px;
+                position: relative;
             }
             li:hover{
-                background: rgba(173, 50, 255, 0.3);
-                transform: translateX(-5px);
+                background: linear-gradient(135deg, #ffe6e6, #fff0f0);
+                transform: translateX(10px) scale(1.02);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                border-left-color: #e74c3c;
             }
         </style>
     </head>
@@ -108,3 +116,4 @@
         </script>
     </body>
 </html>
+
